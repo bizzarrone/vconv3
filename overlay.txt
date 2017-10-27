@@ -1,0 +1,1 @@
+ avconv -i BAB_2254.MOV  -i 06_Logo.png -filter_complex 'overlay' out.mkv
