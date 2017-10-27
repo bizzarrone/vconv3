@@ -5,10 +5,11 @@
 
 # aggiorno il sistema
 apt-get update
-apt-get -y install vim screen aptitude samba git dfc nmon libssl-dev openssh-server  libav-tools libavcodec-ffmpeg56 apache2 php5 make openssh-server
+apt-get -y install apache2 php7.0
+apt-get -y install vim screen aptitude samba git dfc nmon libssl-dev openssh-server  libav-tools libavcodec-ffmpeg56 make openssh-server
 apt-get upgrade -y
 locale-gen en_US en_US.UTF-8 it_IT
-dpkg-reconfigure locales
+#dpkg-reconfigure locales
 
 # correggi ssh server
 #sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config
@@ -48,14 +49,16 @@ echo  " writable = yes" >> /etc/samba/smb.conf
 echo  " guest ok = yes" >> /etc/samba/smb.conf
 
 # creare servizio all'avvio
-mv /vconv3/edge  /etc/init.d/
-mv /vconv3/vconv3 /etc/init.d/
-update-rc.d edge defaults
-update-rc.d edge enable
+#mv /vconv3/edge  /etc/init.d/
+#mv /vconv3/vconv3 /etc/init.d/
+#update-rc.d edge defaults
+#update-rc.d edge enable
 update-rc.d vconv3 defaults
 update-rc.d vconv3 enable
-update-rc.d apache2 defaults
-update-rc.d apache2 enable 
+#update-rc.d apache2 defaults
+#update-rc.d apache2 enable 
+systemctl enable apache2
+systemctl start apache2
 
 # installare le webpages
 cd /
