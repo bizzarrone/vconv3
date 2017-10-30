@@ -12,16 +12,3 @@ As root user (ie: sudo su - ) launch following commands:
   sh install_avconv3.sh
   reboot
 </pre>
-
-In case of updating:
--------------------
-As root user (ie: sudo su - ) launch following commands:
-
-<pre>
-  cd ~
-  rm -f update_avconv3.sh
-  wget https://raw.githubusercontent.com/bizzarrone/vconv3/master/update_avconv3.sh
-  sh update_avconv3.sh
-  reboot
-</pre>
-
