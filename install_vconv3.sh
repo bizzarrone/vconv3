@@ -49,14 +49,10 @@ echo  " writable = yes" >> /etc/samba/smb.conf
 echo  " guest ok = yes" >> /etc/samba/smb.conf
 
 # creare servizio all'avvio
-#mv /vconv3/edge  /etc/init.d/
-#mv /vconv3/vconv3 /etc/init.d/
+mv /vconv3/vconv3.service /lib/systemd/system/vconv3.service
+systemctl enable vconv3.service
 #update-rc.d edge defaults
 #update-rc.d edge enable
-update-rc.d vconv3 defaults
-update-rc.d vconv3 enable
-#update-rc.d apache2 defaults
-#update-rc.d apache2 enable 
 systemctl enable apache2
 systemctl start apache2
 
